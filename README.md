@@ -13,9 +13,9 @@ Clone the rebo, `bundle`, and run from within:
 You have to specify your AWS credentials as well as backup encription password
 in environment variables.
 
-**ARQ_ACCESS_KEY** — Your AWS access key
-**ARQ_SECRET_KEY** — Your AWS secred key
-**ARQ_ENCRYPTION_PASSWORD** — Your backup encryption password
+* **ARQ_ACCESS_KEY** — Your AWS access key
+* **ARQ_SECRET_KEY** — Your AWS secred key
+* **ARQ_ENCRYPTION_PASSWORD** — Your backup encryption password
 
 ## Motivation
 
