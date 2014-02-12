@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'arqivarius'
+
+include Arqivarius
+
+def print_usage
+  $stderr.puts(
+    "Usage:\n"\
+    "\t%{bin} -v\n"\
+    "\t%{bin} [-l log_level]\n"\
+    "\t%{bin} [-l log_level] /s3bucket/computerUUID/folderUUID\n"\
+    "\t%{bin} [-l log_level] /s3bucket/computerUUID/folderUUID reflog\n"\
+    "\t%{bin} [-l log_level] /s3bucket/computerUUID/folderUUID <commitSHA1>\n" % {bin: $0});
+end
+
+#setHSLogLevel(HSLOG_LEVEL_WARN);
+
+cmd = RestoreCommand.new
+
+cmd.read_args
+
+begin
+  cmd.execute
+rescue Error => e
+  $stderr.puts "restore error: #{e}"
+  exit 1
+end
